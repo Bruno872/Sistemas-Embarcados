@@ -18,15 +18,15 @@ O equipamento tem como funcionalidade medir os valores de umidade, temperatura e
 13. Aplicativo Arduino
 
 ## Instalação
-O primeriro passo é instalar o LCD no Arduino de acordo com a imagem abaixo, além de instalar a biblioteca LiquidCristal disponível no link: (https://www.arduinolibraries.info/libraries/liquid-crystal).
+O primeriro passo é instalar o LCD no Arduino de acordo com a imagem abaixo, além de instalar a biblioteca LiquidCristal disponível no link: (https://www.arduinolibraries.info/libraries/liquid-crystal). Ele será responsável por exibir os valores na tela do Display.
 ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/70ce23c5-c3da-4198-8a1a-f2b06a22d894) 
-Feito isso, instale o DHT-11 de acordo com a seguinte imagem, inserindo-o no protoboard e baixe a biblioteca dht disponível neste site:(https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-umidade-e-temperatura-dht11). 
+Feito isso, instale o DHT-11 de acordo com a seguinte imagem, inserindo-o no protoboard e baixe a biblioteca dht disponível neste site:(https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-umidade-e-temperatura-dht11). Ele é dispositivo que mede temperatura e umidade. 
 ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/f4167e07-7cfe-4d9b-a040-96d0d4db02a1) 
-Depois, instale o LDR de acordo com a imagem abaixo:
+Depois, instale o LDR de acordo com a imagem abaixo, que é o responsável por medir a luminosidade.
 ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/ab3739a8-6075-4bc1-98c2-e1a67f420f36)
-Agora, o próximo passo é instalar o RTC, para isso, faça como mostra a imagem, além disso, baixe a biblioteca rtc disponível nesse site: (https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-real-time-clock-rtc-ds1302).
+Agora, o próximo passo é instalar o RTC, para isso, faça como mostra a imagem, além disso, baixe a biblioteca rtc disponível nesse site: (https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-real-time-clock-rtc-ds1302). Ele servirá como relógio para marcar o tempo de 1 minuto entre as medições.
 ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/21675191-21c1-47e3-a35c-6b455de57ba7) 
-Instale também o buzzer de acordo com a imagem:
+Instale também o buzzer de acordo com a imagem, que irá emitir o alerta sonoro dependendo dos resultados.
 ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/c4251f48-950b-4d9e-8bf8-35986afac96b)
 Para instalar as bibliotecas no aplicativo arduino, abra o aplicativo, clique em "Sketch", escolha a opção "Incluir Biblioteca" e depois  "Adicionar Biblioteca .ZIP...", selecione o arquivo ZIP da biblioteca baixada e aperte "OK". Siga este procedimento para as três bibliotecas: DHT, RTClib e LiquidCrystal.
 Agora, o próximo passo é abrir aplicativo do arduíno no computador e utilizar o seguinte código:
@@ -194,7 +194,7 @@ void loop() {
 Caso as entradas utilizadas no arduíno não coincidam com os valores de entrada do código, basta alterar os valores de entrada do código para que eles se adaptem ao seu projeto.
 
 ## Uso 
-Para o equipameto funcionar, conecte o arduino ao computador, verifique e carregue o código e inicie a compilação, após um minuto ele calculará as médias de temperatura, luminosidade e umidade, que serão exibidas no display. Caso os valores obtidos estejam fora dos limites estabelecidos pelo programa, o alarme sonoro será ativado através do buzzer.
+Para o equipameto funcionar, conecte o arduino ao computador, verifique e carregue o código e inicie a compilação, ele calculará as médias dos valores de temperatura, luminosidade e umidade obtidos ao longo de um minuto de medições, realizadas a cada 2 segundos, e as exibirá no display. Caso os valores obtidos estejam fora dos limites estabelecidos pelo programa, o alarme sonoro será ativado através do buzzer.
 
 ## Créditos
 
