@@ -3,19 +3,19 @@
 O equipamento tem como funcionalidade medir os valores de umidade, temperatura e luminosidade em tempo real e emitir um alerta caso os valores se encontrem fora de faixas de tolerância.
 
 ## Materiais Utilizados
-1 MCU (Atmega 328P) - Arduino Uno R3
-1 LDR + Resistor 10KOhm
-1 DHT-11 (Sensor de temperatura e umidade)
-1 LCD 16x2
-1 Bateria de 9V
-1 RTC (Real Time Clock)
-1 protoboard
-jumpers
-LEDs
-Resistores
-1 Suporte para bateria
-1 Buzzer
-Aplicativo Arduino
+-1 MCU (Atmega 328P) - Arduino Uno R3
+-1 LDR + Resistor 10KOhm
+-1 DHT-11 (Sensor de temperatura e umidade)
+-1 LCD 16x2
+-1 Bateria de 9V
+-1 RTC (Real Time Clock)
+-1 protoboard
+-jumpers
+-LEDs
+-Resistores
+-1 Suporte para bateria
+-1 Buzzer
+-Aplicativo Arduino
 
 ## Instalação
 O primeriro passo é instalar o LCD no Arduino de acordo com a imagem abaixo, além de instalar a biblioteca LiquidCristal disponível no link: (https://www.arduinolibraries.info/libraries/liquid-crystal).
