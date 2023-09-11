@@ -19,15 +19,15 @@ O equipamento tem como funcionalidade medir os valores de umidade, temperatura e
 
 ## Instalação
 O primeriro passo é instalar o LCD no Arduino de acordo com a imagem abaixo, além de instalar a biblioteca LiquidCristal disponível no link: (https://www.arduinolibraries.info/libraries/liquid-crystal).
-![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/70ce23c5-c3da-4198-8a1a-f2b06a22d894). 
+![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/70ce23c5-c3da-4198-8a1a-f2b06a22d894) 
 Feito isso, instale o DHT-11 de acordo com a seguinte imagem, inserindo-o no protoboard e baixe a biblioteca dht disponível neste site:(https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-umidade-e-temperatura-dht11). 
 ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/f4167e07-7cfe-4d9b-a040-96d0d4db02a1) 
 Depois, instale o LDR de acordo com a imagem abaixo:
-![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/ab3739a8-6075-4bc1-98c2-e1a67f420f36).
+![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/ab3739a8-6075-4bc1-98c2-e1a67f420f36)
 Agora, o próximo passo é instalar o RTC, para isso, faça como mostra a imagem, além disso, baixe a biblioteca rtc disponível nesse site: (https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-real-time-clock-rtc-ds1302).
 ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/21675191-21c1-47e3-a35c-6b455de57ba7) 
 Instale também o buzzer de acordo com a imagem:
-![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/c4251f48-950b-4d9e-8bf8-35986afac96b).
+![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/c4251f48-950b-4d9e-8bf8-35986afac96b)
 Para instalar as bibliotecas no aplicativo arduino, abra o aplicativo, clique em "Sketch", escolha a opção "Incluir Biblioteca" e depois  "Adicionar Biblioteca .ZIP...", selecione o arquivo ZIP da biblioteca baixada e aperte "OK". Siga este procedimento para as três bibliotecas: DHT, RTClib e LiquidCrystal.
 Agora, o próximo passo é abrir aplicativo do arduíno no computador e utilizar o seguinte código:
 
