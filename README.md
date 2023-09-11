@@ -15,10 +15,23 @@ LEDs
 Resistores
 1 Suporte para bateria
 1 Buzzer
+Aplicativo Arduino
 
 ## Instalação
-O primeriro passo é instalar o LCD no Arduino de acordo com a imagem abaixo: ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/70ce23c5-c3da-4198-8a1a-f2b06a22d894). Feito isso, instale o DHT-11 de acordo com a seguinte imagem: ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/f4167e07-7cfe-4d9b-a040-96d0d4db02a1), inserindo-o no protoboard e baixe a biblioteca dht disponível neste site: https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-umidade-e-temperatura-dht11. Depois, instale o LDR de acordo com a imagem abaixo: ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/ab3739a8-6075-4bc1-98c2-e1a67f420f36). Agora, o próximo passo é instalar o RTC, para isso, faça como mostra a imagem: 
-![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/21675191-21c1-47e3-a35c-6b455de57ba7) , além disso, baixe a biblioteca rtc disponível nesse site: https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-real-time-clock-rtc-ds1302. Instale também o buzzer de acordo com a imagem: ![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/c4251f48-950b-4d9e-8bf8-35986afac96b). Agora, o próximo passo é abrir aplicativo do arduíno no computador e utilizar o seguinte código:
+O primeriro passo é instalar o LCD no Arduino de acordo com a imagem abaixo, além de instalar a biblioteca LiquidCristal disponível no link: (https://www.arduinolibraries.info/libraries/liquid-crystal).
+![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/70ce23c5-c3da-4198-8a1a-f2b06a22d894). 
+Feito isso, instale o DHT-11 de acordo com a seguinte imagem, inserindo-o no protoboard e baixe a biblioteca dht disponível neste site:(https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-umidade-e-temperatura-dht11). 
+![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/f4167e07-7cfe-4d9b-a040-96d0d4db02a1) 
+Depois, instale o LDR de acordo com a imagem abaixo:
+![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/ab3739a8-6075-4bc1-98c2-e1a67f420f36).
+Agora, o próximo passo é instalar o RTC, para isso, faça como mostra a imagem, além disso, baixe a biblioteca rtc disponível nesse site: (https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-real-time-clock-rtc-ds1302).
+![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/21675191-21c1-47e3-a35c-6b455de57ba7) 
+Instale também o buzzer de acordo com a imagem:
+![image](https://github.com/Bruno872/Sistemas-Embarcados/assets/144634914/c4251f48-950b-4d9e-8bf8-35986afac96b).
+Para instalar as bibliotecas no aplicativo arduino, abra o aplicativo, clique em "Sketch", escolha a opção "Incluir Biblioteca" e depois  "Adicionar Biblioteca .ZIP...", selecione o arquivo ZIP da biblioteca baixada e aperte "OK". Siga este procedimento para as três bibliotecas: DHT, RTClib e LiquidCrystal.
+Agora, o próximo passo é abrir aplicativo do arduíno no computador e utilizar o seguinte código:
+
+```
 #include <dht.h>
  
 #include <LiquidCrystal.h> //Carrega a biblioteca LiquidCrystal nativa na IDE
@@ -177,7 +190,7 @@ void loop() {
   timer = millis(); // Atualiza a referência do 1m
   }
 }
-
+```
 Caso as entradas utilizadas no arduíno não coincidam com os valores de entrada do código, basta alterar os valores de entrada do código para que eles se adaptem ao seu projeto.
 
 ## Uso 
@@ -185,7 +198,9 @@ Para o equipameto funcionar, conecte o arduino ao computador, verifique e carreg
 
 ## Créditos
 
-https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-umidade-e-temperatura-dht11
-https://victorvision.com.br/blog/display-lcd-16x2/
-https://mundoprojetado.com.br/ldr-como-usar/
-https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-real-time-clock-rtc-ds1302
+(https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-sensor-de-umidade-e-temperatura-dht11)
+(https://victorvision.com.br/blog/display-lcd-16x2/)
+(https://mundoprojetado.com.br/ldr-como-usar/)
+(https://blogmasterwalkershop.com.br/arduino/como-usar-com-arduino-modulo-real-time-clock-rtc-ds1302)
+(https://mundoprojetado.com.br/buzzer-como-usar-com-o-arduino/#:~:text=O%20circuito%20do%20buzzer%20%C3%A9,um%20pino%20digital%20do%20Arduino.)
+(https://www.arduinolibraries.info/libraries/liquid-crystal)
