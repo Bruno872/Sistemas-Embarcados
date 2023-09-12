@@ -188,7 +188,7 @@ void saveDataToEEPROM(int temp, int umid, int lumi, DateTime timestamp) {
 Caso as entradas utilizadas no arduíno não coincidam com os valores de entrada do código, basta alterar os valores de entrada do código para que eles se adaptem ao seu projeto.
 
 ## Uso 
-Para o equipameto funcionar, conecte o arduino ao computador, verifique e carregue o código e inicie a compilação, ele calculará as médias dos valores de temperatura, luminosidade e umidade obtidos ao longo de um minuto de medições, realizadas a cada 2 segundos, e as exibirá no display. Caso os valores obtidos estejam fora dos limites estabelecidos pelo programa, o alarme sonoro será ativado através do buzzer. Para o equipamento funcionar sem estar conectado ao computador, conecte a bateria no arduino depois de já ter carregado o código.
+Para o equipameto funcionar, conecte o arduino ao computador, verifique e carregue o código e inicie a compilação, ele calculará as médias dos valores de temperatura, luminosidade e umidade obtidos ao longo de um minuto de medições, realizadas a cada 2 segundos, e as exibirá no display. Caso a temperatura não esteja entre 15 e 25 graus Celsius, ou a luminosidade for maior que 30%, ou a umidade não estiver entre 30 e 50%, o alarme sonoro será ativado através do buzzer e o led vermelho ficará aceso. Para o equipamento funcionar sem estar conectado ao computador, conecte a bateria no arduino depois de já ter carregado o código.
 
 ## Créditos
 
