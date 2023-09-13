@@ -45,23 +45,23 @@ Agora, o próximo passo é abrir aplicativo do arduíno no computador e utilizar
 
 #include <Adafruit_Sensor.h>
 
+
 RTC_DS3231 rtc;
 char daysOfTheWeek[7][12] = {"Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"};
 const int ldrPin = A0;
-int Pinbuzzer = 10;
+int Pinbuzzer = 10; //Porta do buzzer
 
+//Variaveis preenchidas a cada leitura
 int contTemp = 0;
 int contUmid = 0;
 int contLumi = 0;
 
+//Variaveis para medias geradas de 1 em 1 minuto
 int medTemp = 0;
 int medUmid = 0;
 int medLumi = 0;
 int cont = 0;
 
-int pinoR = 7;
-int pinoG = 8;
-int pinoB = 9;
 
 #define COMMON_ANODE
 
@@ -82,7 +82,7 @@ void setup() {
   pinMode(Pinbuzzer, OUTPUT);
   
   if (!rtc.begin()) {
-    Serial.println("DS3231 não encontrado");
+    Serial.println("DS3231 não encontrado"); // Verificação rtc
     while (1);
   }
   
@@ -90,13 +90,15 @@ void setup() {
     Serial.println("DS3231 OK!");
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
+
   delay(100);
 }
+
 
 void loop() {
   DateTime now = rtc.now();
   
-  if (now.second() % 5 == 0) {
+  if (now.second() % 5 == 0) { //captador de valores atuais para poder realizar as medias
     DHT.read11(A1);
     int valorLdr = analogRead(ldrPin);
     int brilho = map(valorLdr, 0, 1023, 0, 100);
@@ -123,13 +125,25 @@ void loop() {
     cont++;
   }
 
-  if (now.second() == 58) {
+  if (now.second() == 58) { //calcula a media de um minuto
     medTemp = contTemp / cont;
     medUmid = contUmid / cont;
     medLumi = contLumi / cont;
    
     if (medTemp < 15 || medTemp > 25 || medLumi > 30 || medUmid < 30 || medUmid > 50) {
-      saveDataToEEPROM(medTemp, medUmid, medLumi, now);
+//      saveDataToEEPROM(medTemp, medUmid, medLumi, now);
+
+        String log_eeprom = "";
+        log_eeprom += String(medUmid) + "%|";
+        log_eeprom += String(medTemp) + "*C|";
+        log_eeprom += String(medLumi) + "%";
+        log_eeprom += "-" + String(now.day(), DEC) +"/"+ String(now.month(), DEC) +"/"+ String(now.year(), DEC) + ',';  // String para salvar os valores na EEPROM
+
+        //salvar string na eeprom
+        for (unsigned long i = 0; i < 1024; ++i)
+        {
+            EEPROM.write(i, log_eeprom[i]);
+        }            
       digitalWrite(Pinbuzzer, HIGH);
       digitalWrite(9, HIGH);
     }
@@ -166,6 +180,14 @@ void loop() {
   Serial.print(':');
   Serial.print(now.second(), DEC);
   Serial.println();
+  
+  //Mostra log_eeprom no serial
+   String log_serial = "";     
+   for(int i = 0; i < EEPROM.length(); ++i)
+   {
+        log_serial += char(EEPROM.read(i));
+   }      
+   Serial.print(log_serial);
   delay(1000);
 }
 
@@ -182,7 +204,6 @@ void saveDataToEEPROM(int temp, int umid, int lumi, DateTime timestamp) {
   EEPROM.put(address, timestamp.unixtime());
   Serial.println("Dados fora do padrão salvos na EEPROM.");
 }
-
 
 ```
 Caso as entradas utilizadas no arduíno não coincidam com os valores de entrada do código, basta alterar os valores de entrada do código para que eles se adaptem ao seu projeto.
